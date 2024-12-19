@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:ontology="http://ontology.org#">
+
+    <!-- Ontology Definition -->
+    <owl:Ontology rdf:about="http://ontology.org">
+        <rdfs:comment>A sample ontology defining shapes, areas, and volume formulas.</rdfs:comment>
+        <rdfs:label>Shape Formula Ontology</rdfs:label>
+    </owl:Ontology>
+
+    <!-- Classes -->
+    <owl:Class rdf:about="http://ontology.org#Shape"/>
+    <owl:Class rdf:about="http://ontology.org#Formula"/>
+
+    <!-- Properties -->
+    <owl:DatatypeProperty rdf:about="http://ontology.org#hasAreaFormula">
+        <rdfs:domain rdf:resource="http://ontology.org#Shape"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://ontology.org#hasVolumeFormula">
+        <rdfs:domain rdf:resource="http://ontology.org#Shape"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+    <!-- Instances -->
+    <!-- Circle -->
+    <rdf:Description rdf:about="http://ontology.org#Circle">
+        <rdf:type rdf:resource="http://ontology.org#Shape"/>
+        <ontology:hasAreaFormula>pi * radius^2</ontology:hasAreaFormula>
+    </rdf:Description>
+
+    <!-- Square -->
+    <rdf:Description rdf:about="http://ontology.org#Square">
+        <rdf:type rdf:resource="http://ontology.org#Shape"/>
+        <ontology:hasAreaFormula>side^2</ontology:hasAreaFormula>
+    </rdf:Description>
+
+    <!-- Rectangle -->
+    <rdf:Description rdf:about="http://ontology.org#Rectangle">
+        <rdf:type rdf:resource="http://ontology.org#Shape"/>
+        <ontology:hasAreaFormula>length * width</ontology:hasAreaFormula>
+    </rdf:Description>
+
+    <!-- Triangle -->
+    <rdf:Description rdf:about="http://ontology.org#Triangle">
+        <rdf:type rdf:resource="http://ontology.org#Shape"/>
+        <ontology:hasAreaFormula>(base * height) / 2</ontology:hasAreaFormula>
+    </rdf:Description>
+
+    <!-- Sphere -->
+    <rdf:Description rdf:about="http://ontology.org#Sphere">
+        <rdf:type rdf:resource="http://ontology.org#Shape"/>
+        <ontology:hasVolumeFormula>(4/3) * pi * radius^3</ontology:hasVolumeFormula>
+    </rdf:Description>
+
+    <!-- Cube -->
+    <rdf:Description rdf:about="http://ontology.org#Cube">
+        <rdf:type rdf:resource="http://ontology.org#Shape"/>
+        <ontology:hasVolumeFormula>side^3</ontology:hasVolumeFormula>
+    </rdf:Description>
+
+    <!-- Cylinder -->
+    <rdf:Description rdf:about="http://ontology.org#Cylinder">
+        <rdf:type rdf:resource="http://ontology.org#Shape"/>
+        <ontology:hasVolumeFormula>pi * radius^2 * height</ontology:hasVolumeFormula>
+    </rdf:Description>
+
+</rdf:RDF>
